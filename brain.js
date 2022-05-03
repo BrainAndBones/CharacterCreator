@@ -35,9 +35,10 @@ const database = [
   [1,2,3,4,5,12,18,24,30,37,44],
   [2,3,4,8,12,15,19,23,24,25,29,33,36,40,44,45,4],
   [2,3,4,8,12,15,19,23,24,25,26,33,40,47],
-  [2,3,4,8,12,18,24,31,45]
+  [2,3,4,8,12,18,24,31,45],
+  [3,10,17,24,31,45]
 ];
-const options = "abcdefghijklmnopqrstuvwxyz0123456789?";
+const options = "abcdefghijklmnopqrstuvwxyz0123456789?!";
 var newMsg = "";
 var inputmsg;
 

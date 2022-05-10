@@ -62,3 +62,9 @@ body{
     overflow: scroll;
     max-height: 50vh;
   }
+  #settings{
+      background-color: transparent;
+      margin: 5vh;
+      border-color: transparent;
+      font-size: 3vh;
+  }

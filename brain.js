@@ -41,11 +41,18 @@ const database = [
 const options = "abcdefghijklmnopqrstuvwxyz0123456789?!";
 var newMsg = "";
 var inputmsg;
-
+var block1 = "⬛️";
+var block2 = "⬜️";
 function closeIt(){
   log.style.bottom ='-50%';
   log.innerHTML="";
   newMsg = "";
+}
+function close2(){
+  block1 = document.getElementById("backGround").value;
+  block2 = document.getElementById("mainBlock").value;
+  log.style.bottom ='-50%';
+  log.innerHTML="";
 }
 init = () => {
   
@@ -57,6 +64,10 @@ init = () => {
     var message = `<button style="background: gray; border-radius: 1vmin; float: right;" 
   onclick="closeIt()" >Close</button><br /> 
   Copy-n-Paste Message Created:<br />`;
+  var message2 = `<button style="background: gray; border-radius: 1vmin; float: right;" 
+  onclick="close2()" >Close</button><br /> 
+  Box Options or Enter Any Character:<br /><br /><input type="text" id="mainBlock" placeholder="Main Block" list="blocks"></input>
+  <input type="text" id="backGround" placeholder="Background Block" list="blocks"></input><br /><br />`;
   
     function dLog(msg) {
       if (dBug) {
@@ -67,13 +78,24 @@ init = () => {
         
       }	
     }
+    settings.addEventListener("click", open);
+    function open(){
+      log.style.bottom = '0';
+      log.style.height = 'fit-content';
+      log.innerHTML = `${message2}<br />`;
+    }
     // if dBug = true then anything you send to the dLog(msg) function will be logged; 
     createButton.addEventListener("click", process);
     function process(){
         inputmsg = input.value;
         for(num = 0; num < inputmsg.length; num++){
           if(inputmsg[num]==' '){
-            dLog(`⬛️⬛️⬛️⬛️⬛️⬛️⬛️<br />⬛️⬛️⬛️⬛️⬛️⬛️⬛️<br />⬛️⬛️⬛️⬛️⬛️⬛️⬛️<br />`);
+            for(a=0;a<3;a++){
+              for(b=0;b<7;b++){
+                dLog(block1);
+              }
+              dLog(`<br />`)
+            }
           }
           else{
             logLetter(inputmsg[num]);
@@ -87,10 +109,10 @@ init = () => {
       for(i=-7; i < 56; i++){
           if(i%7==0&&i!=-7){dLog(`<br />`);}
           if(i == database[num1][num2]){
-            dLog("⬜️");
+            dLog(block2);
             num2++;
           }
-          else{dLog("⬛️")}
+          else{dLog(block1)}
       }
       dLog(`<br />`);
     }

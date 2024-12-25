@@ -48,6 +48,7 @@ const database = [
     log.style.bottom ='-50%';
     log.innerHTML="";
     newMsg = "";
+    copiedMsg = "";
   }
   function close2(){
     block1 = document.getElementById("backGround").value;

@@ -1,8 +1,8 @@
 {
   "name": "Character Creator",
   "short_name": "CC",
-  "theme_color": "#ffcbe4",
-  "background_color": "#fa99ca",
+  "theme_color": "#4033b1",
+  "background_color": "#040464",
   "display": "standalone",
   "scope": "/",
   "start_url": "https://brainandbones.github.io/CharacterCreator/",
